@@ -1,0 +1,70 @@
+body {
+  background-color: firebrick;
+}
+
+/* ----- Header ----- */
+.hamburguesa {
+  max-width: 3rem;
+  border-radius: var(--borde);
+}
+.hamburguesa:active {
+  background-color: rgba(225, 255, 255, .1);
+}
+.nav ul {
+  display: none;
+}
+.hamburguesa input {
+  display: none;
+}
+
+/* ----- Footer ----- */
+.footer .detalles {
+  flex-direction: column;
+}
+
+/* ----- Menu ----- */
+
+.buscar {
+  padding-top: 6rem;
+}
+.boxflex a:active {
+  background-color: var(--color-btn);
+}
+
+/* ----- Reserva ----- */
+.reserva .gridbox {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.encuentranos {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ----- Reseña ----- */
+.resena {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 10rem repeat(4 30rem);
+  grid-template-areas: 
+  "r1 r1"
+  "r2 r2"
+  "r3 r3"
+  "r4 r4"
+  "r5 r5"
+  ;
+  gap: 1rem;
+}
+.resena .r2 {
+  grid-area: r2;
+}
+.resena .r3 {
+  grid-area: r3;
+}
+.resena .r4 {
+  grid-area: r4;
+}
+.resena .r5 {
+  grid-area: r5;
+}

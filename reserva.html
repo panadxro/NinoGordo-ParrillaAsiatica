@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="header">
+    <h1 class="logo"><a href="index.html">Niño Gordo</a></h1>
+    <nav class="nav">
+      <div class="hamburguesa">
+        <input id="mobilenav" type="checkbox">
+        <label for="mobilenav">
+          <img src="img/icon/hamburger.png" alt="Menú">
+        </label>
+      </div>
+      <ul>
+        <li><a href="index.html" title="Inicio">Inicio</a></li>
+        <li><a href="menu.html" title="Menú">Menú</a></li>
+        <li><a href="reserva.html" title="Reserva">Reservar</a></li>
+        <li><a href="resena.html" title="Reseña">Reseña</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="seccion reserva" id="inicio">
+      <h2 class="titulo">Reserva tu mesa</h2>
+      <form class="gridbox" action="reservacion.php" method="post">
+        <fieldset class="seccion__form">
+          <legend>Reservación</legend>
+          <div class="celda">
+            <label for="personas">Numero de personas</label>
+            <input id="personas" class="personas" type="number" min="0" max="10" value="0" required>
+          </div>
+          <div class="celda cajadoble">
+            <label for="fecha">Fecha</label>
+            <input id="fecha" type="date" required>
+          </div>
+          <div class="celda cajadoble">
+            <label for="hora">Hora</label>
+            <input id="hora" type="time" min="13:00" max="00:00" required>
+          </div>
+          <div class="celda">
+            <label>Preferencia de servicio</label>
+            <div>
+              <input type="radio" name="radio" id="almuerzo" checked="checked">
+              <label class="preferencia" for="almuerzo">Almuerzo</label>
+              <input type="radio" name="radio" id="cena">
+              <label class="preferencia" for="cena">Cena</label>
+            </div>
+          </div> 
+          <div class="celda">
+            <label for="lugar">Lugar de establecimiento</label>
+            <select id="lugar" name="lugar" required>
+              <option></option>
+              <option value="comedor">Comedor</option>
+              <option value="vereda">Vereda</option>
+              <option value="patio">Patio</option>
+              <option value="bar">Bar</option>
+            </select>
+          </div>
+        </fieldset>
+        <fieldset class="seccion__form">
+          <legend>Datos personales</legend>
+          <div class="celda">
+            <label for="nombre">Nombre completo</label>
+            <input id="nombre" type="text">
+          </div>
+          <div class="celda">
+            <label for="correo">Correo electrónico</label>
+            <input id="correo" type="email">
+          </div>
+          <div class="celda">
+            <label for="telefono">Telefono</label>
+            <input id="telefono" type="tel">
+          </div>
+          <div class="celda">
+            <label for="comentario">Comentario</label>
+            <textarea id="comentario"></textarea>
+          </div>
+        </fieldset>
+        <div class="cajaenviar">
+          <input class="btn" type="submit">
+        </div>
+      </form>
+    </section>
+
+    <div class="gif">
+      <video class="ads__gif">
+      </video>
+    </div>
+
+    <section class="seccion encuentranos">
+      <h3 class="titulo">Encuentranos</h3>
+      <div class="mapa">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5524.178807873419!2d-58.43158968377536!3d-34.58655540276593!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb588a9281861%3A0xa8576c7fafbb8998!2sNi%C3%B1o%20Gordo!5e0!3m2!1ses-419!2sar!4v1690404335758!5m2!1ses-419!2sar" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <article class="info">
+        <h4 class="subtitulo">Info</h4>
+        <p>Buenos Aires</p>
+        <p>Thames 1810,
+          Palermo, C1414DDL</p>
+        <p>+54 911 2453-5636</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <h5 class="logo"><a href="#inicio">Niño Gordo</a></h5>
+    <div class="detalles">
+      <article>
+        <img src="img/location.png" alt="">
+        <p>Thames 1810,<br> Palermo,<br> Ciudad Autónoma de Buenos Aires</p>
+      </article>
+      <article>
+
+        <img src="img/time.png" alt="">
+        <p>Martes a Viernes de 20 a 00hs.<br>Sábado y Domingo de 13 a 17hs y de 20 a 00hs. </p>
+      </article>
+      <article>
+        <img src="img/phonerojo.png" alt="">
+        <p>Reserva tu mesa <br>2129-5028</p>
+      </article>
+    </div>
+    <ul class="redes">
+      <li><a href="" title="Twitter" target="_blank"><img src="img/twitterrojo.png" alt="Twitter"></a></li>
+      <li><a href="" title="Facebook" target="_blank"><img src="img/facebookrojo.png" alt="Facebook"></a></li>
+      <li><a href="" title="Instagram" target="_blank"><img src="img/instagramrojo.png" alt="Instagram"></a></li>
+    </ul>
+  </footer>
+</body>
+</html>
