@@ -1,8 +1,9 @@
 @media screen and (orientation:portrait) {
-  body {
-    background-color: firebrick;
-  }
   /* ----- Header ----- */
+  .header {
+    display: flex;
+    flex-wrap: wrap;
+  }
   .hamburguesa {
     max-width: 3rem;
     border-radius: var(--borde);
@@ -10,11 +11,41 @@
   .hamburguesa:active {
     background-color: rgba(225, 255, 255, .1);
   }
-  .nav ul {
+  .header nav {
+    flex-grow: 1;
+    flex-basis: 100%;
+    align-items: center;
+    min-height: 100vh;
+  }
+  .nav{
     display: none;
   }
-  .hamburguesa input {
-    display: none;
+  .nav__links{
+    display: flex;
+    min-height: 50vh;
+    padding: 2rem;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    transition: transform;
+  }
+  .nav__links li {
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  .header li a {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    margin-inline: .5rem;
+    border-radius: .5rem;
+  }
+  .header li a:active {
+    background-color: rgba(225, 255, 255, .2);
+  }
+  #nav__checkbox:checked + .nav {
+    display: block;
   }
 
   /* ----- Footer ----- */
@@ -67,9 +98,6 @@
 }
 
 @media screen and (orientation:landscape) {
-  body {
-    background-color: firebrick;
-  }
   /* ----- Header ----- */
   .header ul {
     display: flex;
@@ -90,7 +118,8 @@
 
   /* ----- Menu ----- */
   .buscar {
-    min-height: 100vh;
+    min-height: 70vh;
+    padding-block-start: 5rem;
   }
   /* ----- Reserva ----- */
   .reserva .gridbox {

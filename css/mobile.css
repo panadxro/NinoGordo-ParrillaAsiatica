@@ -1,8 +1,8 @@
-body {
-  background-color: firebrick;
-}
-
 /* ----- Header ----- */
+.header {
+  display: flex;
+  flex-wrap: wrap;
+}
 .hamburguesa {
   max-width: 3rem;
   border-radius: var(--borde);
@@ -10,13 +10,42 @@ body {
 .hamburguesa:active {
   background-color: rgba(225, 255, 255, .1);
 }
-.nav ul {
+.header nav {
+  flex-grow: 1;
+  flex-basis: 100%;
+  align-items: center;
+  min-height: 100vh;
+}
+.nav{
   display: none;
 }
-.hamburguesa input {
-  display: none;
+.nav__links{
+  display: flex;
+  min-height: 50%;
+  padding: 2rem;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  transition: transform;
 }
-
+.nav__links li {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+}
+.header li a {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  margin-inline: .5rem;
+  border-radius: .5rem;
+}
+.header li a:active {
+  background-color: rgba(225, 255, 255, .2);
+}
+#nav__checkbox:checked + .nav {
+  display: block;
+}
 /* ----- Footer ----- */
 .footer .detalles {
   flex-direction: column;

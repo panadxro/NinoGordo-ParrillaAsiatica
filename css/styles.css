@@ -22,10 +22,7 @@ body {
   min-height: 100vh;
   width: 100%;
   font-size: 100%;
-/*background-image: url(../img/fondo.jpg);
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed; */
+  background-color: firebrick;
 }
 h1, h2, h3, h4, h5, h6, p, a, figcaption, textarea, legend, label, input, select {
   font-size: 1em;
@@ -47,8 +44,8 @@ li {
 }
 /* --Variables-- */
 :root {
-  --titulo: clamp(3em, 5vw, 4em);
-  --subtitulo: 2.5em;
+  --titulo: clamp(3em, 5vw, 10em);
+  --subtitulo: clamp(2.5em, 3vw, 5em);
   --texto-p: 1.1em;
   --sombra: 4px 4px 8px rgba(0, 0, 0, 0.2);
   --color-font: white;
@@ -58,6 +55,13 @@ li {
 }
 /* --Componentes-- */
 /* Boton */
+.titulo {
+  font-size: var(--titulo);
+}
+.subtitulo {
+  font-size: var(--subtitulo);
+  font-weight: 600;
+}
 .btn {
   background-color: var(--color-btn);
   border-radius: 2rem;
@@ -71,6 +75,7 @@ li {
   color: white;
   width: 100%;
   min-height: 5rem;
+  padding-block: 1rem;
   padding-inline: clamp(1rem, 5vw, 3rem);
   display: flex;
   justify-content: space-between;
@@ -84,6 +89,9 @@ li {
 .logo a {
   font-weight: bold;
   padding: .3rem;
+}
+#nav__checkbox {
+  display: none;
 }
 /* Footer */
 .footer {
@@ -159,6 +167,8 @@ li {
   background-color: gray;
   min-height: 23rem;
 }
+
+
 
 /* ----- Inicio ----- */
 /* Inicio - 1ra Seccion */
@@ -266,7 +276,7 @@ li {
   background-color: black;
   box-shadow: var(--sombra);
   width: clamp(5rem, 20vw, 28rem);
-  height: clamp(10rem, 30vw, 25rem);
+  height: clamp(8rem, 30vw, 30rem);
   border-radius: var(--borde);
   display: flex;
   align-items: center;
@@ -275,9 +285,10 @@ li {
 }
 .boxflex a figure {
   width: 60%;
+  aspect-ratio: 1 / 1;
 }
 .boxflex a figure img {
-  background-color: gray;
+  filter: drop-shadow(0px 0px 3px white);
 }
 /* Menu - Categorias */
 .categoria {
@@ -297,9 +308,10 @@ li {
 }
 .categoria .gridbox .plato {
   flex-direction: column;
-  min-height: 20rem;
+  max-height: 20rem;
   overflow: hidden;
   border-radius: var(--borde);
+  box-shadow: var(--sombra);
 }
 .plato figure {
   position: relative;
@@ -315,7 +327,8 @@ li {
   padding: 1rem 1rem;
   bottom: 0;
   left: 0;
-  background-color: darkslategray;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(1rem);
 }
 
 /* ----- Reserva ----- */
@@ -414,7 +427,8 @@ li {
 /* Reserva - Encuentranos */
 .encuentranos {
   display: grid;
-  padding-top: 4rem;
+  padding-block: 4rem;
+
 }
 .encuentranos .titulo {
   font-size: var(--titulo);
@@ -507,4 +521,77 @@ li {
 }
 .contenido_descripcion {
   grid-area: p3;
+}
+
+/* ----- Confirmacion ----- */
+/* Confirma - Reservacion */
+.confirma {
+  min-height: 100vh;
+}
+.confirma .titulo {
+  padding-block-start: 4rem;
+  margin-block: 2rem ;
+  font-weight: 600;
+  text-align: center;
+}
+.confirma .subtexto {
+  text-align: center;
+}
+.confirma .boxflex{
+  margin-block: 1rem;
+  width: 100%;
+  display: flex;
+  gap: min(.2rem, 1rem);
+  justify-content: space-evenly;
+}
+.confirma .boxflex article {
+  background-color: black;
+  box-shadow: var(--sombra);
+  width: clamp(5rem, 20vw, 8rem);
+  border-radius: var(--borde);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 1rem;
+}
+.boxflex article p {
+  
+}
+.boxflex article h3 {
+  padding: 1rem;
+}
+
+/* Confirma - Detalles */
+.detalle{
+
+}
+.detalle .subtitulo{
+  width: 100%;
+}
+.boxdetalles {
+  background-color: #181818;
+  width: 100%;
+  margin-block: 2rem;
+  padding: 2rem 3rem;
+}
+.boxdetalles h4 {
+  font-weight: 600;
+  font-size: 1.5em;
+}
+.boxdetalles h5 {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+.boxdetalles p {
+  font-weight: 100;
+  font-size: 1rem;
+}
+
+.detalle a {
+  font-size: 1.5em;
+  text-align: center;
+  width: 15rem;
+  padding-block: 1rem;
+  margin-block-end: 2rem;
 }
