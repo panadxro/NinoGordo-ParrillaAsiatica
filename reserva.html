@@ -28,33 +28,33 @@
   <main>
     <section class="seccion reserva" id="inicio">
       <h2 class="titulo">Reserva tu mesa</h2>
-      <form class="gridbox" action="confirmacion.html" method="post">
+      <form class="gridbox" action="confirmacion.php" method="post">
         <fieldset class="seccion__form">
           <legend>Reservación</legend>
           <div class="celda">
             <label for="personas">Numero de personas</label>
-            <input id="personas" class="personas" type="number" min="0" max="10" value="0" required>
+            <input id="personas" name="personas" class="personas" type="number" min="0" max="10" value="0" required>
           </div>
           <div class="celda cajadoble">
             <label for="fecha">Fecha</label>
-            <input id="fecha" type="date" required>
+            <input id="fecha" name="fecha" type="date" required>
           </div>
           <div class="celda cajadoble">
             <label for="hora">Hora</label>
-            <input id="hora" type="time" min="13:00" max="00:00" required>
+            <input id="hora" name="hora" type="time" min="13:00" max="00:00" required>
           </div>
           <div class="celda">
             <label>Preferencia de servicio</label>
             <div>
-              <input type="radio" name="radio" id="almuerzo" checked="checked">
+              <input type="radio" name="servicio" id="almuerzo" checked="checked">
               <label class="preferencia" for="almuerzo">Almuerzo</label>
-              <input type="radio" name="radio" id="cena">
+              <input type="radio" name="servicio" id="cena">
               <label class="preferencia" for="cena">Cena</label>
             </div>
           </div> 
           <div class="celda">
-            <label for="lugar">Lugar de establecimiento</label>
-            <select id="lugar" name="lugar" required>
+            <label for="establecimiento">Lugar de establecimiento</label>
+            <select id="establecimiento" name="establecimiento" required>
               <option></option>
               <option value="comedor">Comedor</option>
               <option value="vereda">Vereda</option>
@@ -67,15 +67,15 @@
           <legend>Datos personales</legend>
           <div class="celda">
             <label for="nombre">Nombre completo</label>
-            <input id="nombre" type="text">
+            <input id="nombre" name="nombre" type="text">
           </div>
           <div class="celda">
             <label for="correo">Correo electrónico</label>
-            <input id="correo" type="email">
+            <input id="correo" name="correo" type="email">
           </div>
           <div class="celda">
             <label for="telefono">Telefono</label>
-            <input id="telefono" type="tel">
+            <input id="telefono" name="telefono" type="tel">
           </div>
           <div class="celda">
             <label for="comentario">Comentario</label>

@@ -25,32 +25,81 @@
     </nav>
   </header>
   <main>
+  <?php
+      $personas;
+      $fecha;
+      $date = new DateTime($fecha);
+      $hora;
+      $time = new DateTime($hora);
+      $servicio;
+      $establecimiento;
+      $nombre;
+      $correo;
+      $telefono;
+      ?>
     <section class="seccion confirma">
       <h2 class="titulo">Reservación</h2>
-      <p class="subtexto">Lucas Panadero,<br>Tu reservacion en Niño Gordo fue confirmada.</p>
+      <p class="subtexto"><?php
+        if ($_GET['nombre']) {
+          $nombre = $_GET['nombre'];
+          echo "$nombre";
+        }?>,<br>Tu reservacion en Niño Gordo fue confirmada.</p>
       <div class="boxflex">
         <article>
-          <p>Sabado</p>
-          <h3 class="subtitulo">23</h3>
-          <p>Jul</p>
+          <p><?php
+            if ($_GET['fecha']) {
+              $nombreDia = $date->format('l');
+              echo "$nombreDia";
+            }?></p>
+          <h3 class="subtitulo"><?php
+            if ($_GET['fecha']) {
+              $dia = $date->format('d');
+              echo "$dia";
+            }?></h3>
+          <p><?php
+            if ($_GET['fecha']) {
+              $nombreMes = $date->format('F');
+              echo "$nombreMes";
+            }?></p>
         </article>
         <article>
           <p>Horario</p>
-          <h3 class="subtitulo">13:00</h3>
+          <h3 class="subtitulo"><?php
+            if ($_GET['hora']) {
+              $hora = $_GET['hora'];
+              echo "$hora";
+            }?></h3>
           <p>p.m</p>
         </article>
         <article>
           <p>Para</p>
-          <h3 class="subtitulo">2</h3>
+          <h3 class="subtitulo"><?php
+            if ($_GET['personas']) {
+              $personas = $_GET['personas'];
+              echo "$personas";
+            }?></h3>
           <p>personas</p>
         </article>
       </div>
     </section>
+
     <section class="seccion detalle">
       <h3 class="subtitulo">Más detalles</h3>
       <article class="boxdetalles">
         <h4>Reserva en Niño Gordo</h4>
-        <p>23 jul, 13:00</p>
+        <p class="textodetalle"><?php
+            if ($_GET['fecha']) {
+              $dia = $date->format('d');
+              echo "$dia";
+            }?> <?php
+            if ($_GET['fecha']) {
+              $nombreMes = $date->format('F');
+              echo "$nombreMes";
+            }?>, <?php
+          if ($_GET['hora']) {
+            $hora = $_GET['hora'];
+            echo "$hora";
+          }?></p>
         <ul>
           <li>
             <figure>
@@ -71,28 +120,44 @@
               <img src="#" alt="">
             </figure>
             <h5>Número de confirmación</h5>
-            <p>ninogordo(numerodetelefono)</p>
+            <p>ninogordo<?php
+              if ($_GET['telefono']) {
+                $telefono = $_GET['telefono'];
+                echo "$telefono";
+              }?></p>
           </li>
           <li>
             <figure>
               <img src="#" alt="">
             </figure>
             <h5>Número de personas</h5>
-            <p>2</p>
+            <p><?php
+              if ($_GET['personas']) {
+                $personas = $_GET['personas'];
+                echo "$personas";
+              }?></p>
           </li>
           <li>
             <figure>
               <img src="#" alt="">
             </figure>
             <h5>Establecimiento</h5>
-            <p>Bar</p>
+            <p><?php
+              if ($_GET['establecimiento']) {
+                $establecimiento = $_GET['establecimiento'];
+                echo "$establecimiento";
+              }?></p>
           </li>
           <li>
             <figure>
               <img src="#" alt="">
             </figure>
             <h5>Servicio</h5>
-            <p>Almuerzo</p>
+            <p><?php
+              if ($_GET['servicio']) {
+                $servicio = $_GET['servicio'];
+                echo "$servicio";
+              }?></p>
           </li>
         </ul>
       </article>

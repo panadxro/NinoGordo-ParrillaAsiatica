@@ -495,10 +495,6 @@ li {
   display: grid;
   grid-template-columns: 10rem 1fr;
   grid-template-rows: 13rem 5rem;
-  grid-template-areas: 
-  "p1 p2"
-  "p3 p3"
-  ;
   gap: 1rem;
   flex: 1;
 }
@@ -507,10 +503,10 @@ li {
   border-radius: var(--borde);
   width: 10rem;
   min-height: 12rem;
-  grid-area: p1;
+  grid-column: 1;
 }
 .contenido_resena article {
-  grid-area: p2;
+  grid-column: 2;
 }
 .contenido_resena article h4 {
   font-size: 2em;
@@ -520,8 +516,31 @@ li {
   font-size: 1.5em;
 }
 .contenido_descripcion {
-  grid-area: p3;
+  grid-row: 2;
+  grid-column: 1 / span 2;
 }
+/* Reseña - Estaclecimiento */
+.establecimiento {
+  min-height: 100vh;
+}
+.establecimiento h2 {
+  margin-block-start: 3rem;
+  font-weight: 600;
+}
+.establecimiento figure {
+  width: 100%;
+}
+.establecimiento figure img {
+  background-color: gray;
+  min-height: 15rem;
+  margin-block: 2rem;
+}
+.establecimiento p {
+  font-size: 1.6rem;
+  width: 80%;
+  margin-block: 3rem;
+}
+
 
 /* ----- Confirmacion ----- */
 /* Confirma - Reservacion */
@@ -547,7 +566,8 @@ li {
 .confirma .boxflex article {
   background-color: black;
   box-shadow: var(--sombra);
-  width: clamp(5rem, 20vw, 8rem);
+  width: clamp(5rem, 20vw, 15rem);
+  max-height: clamp(10rem, 25vw, 30rem);
   border-radius: var(--borde);
   display: flex;
   align-items: center;
@@ -563,9 +583,6 @@ li {
 }
 
 /* Confirma - Detalles */
-.detalle{
-
-}
 .detalle .subtitulo{
   width: 100%;
 }
@@ -574,20 +591,48 @@ li {
   width: 100%;
   margin-block: 2rem;
   padding: 2rem 3rem;
+  overflow: hidden;
 }
 .boxdetalles h4 {
   font-weight: 600;
-  font-size: 1.5em;
+  font-size: 1.7em;
 }
-.boxdetalles h5 {
-  font-size: 1.2em;
-  font-weight: 600;
-}
-.boxdetalles p {
+.boxdetalles .textodetalle {
   font-weight: 100;
-  font-size: 1rem;
+  font-size: 1.5em;
+  padding-block: .5rem;
 }
-
+.boxdetalles ul {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 100%;
+}
+.boxdetalles li {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 4rem 1fr;
+  grid-template-rows: 2rem 2rem;
+  padding-block: 1rem;
+}
+.boxdetalles li h5 {
+  font-size: 1.5em;
+  font-weight: 600;
+  grid-row: 1;
+  grid-column: 2;
+}
+.boxdetalles li p {
+  font-size: 1.3rem;
+  font-weight: 100;
+  grid-row: 2;
+  grid-column: 2;
+}
+.boxdetalles li figure {
+  width: clamp(2rem, 5vw, 3rem);
+  aspect-ratio: 1 / 1;
+  background-color:antiquewhite;
+  grid-row: 1 / span 2 ;
+}
 .detalle a {
   font-size: 1.5em;
   text-align: center;
