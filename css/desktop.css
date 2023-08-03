@@ -20,10 +20,11 @@
 }
 
 /* ----- Footer ----- */
-.detaller {
+.detalles {
   align-items: start;
 }
-/* ----- Footer ----- */
+
+/* ----- Video ----- */
 video {
   overflow: hidden;
   height: 55vh;

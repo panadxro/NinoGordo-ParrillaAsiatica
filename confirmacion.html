@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,39 +47,45 @@
         }?>,<br>Tu reservacion en Niño Gordo fue confirmada.</p>
       <div class="boxflex">
         <article>
-          <p><?php
+          <p class="p"><?php
             if ($_GET['fecha']) {
               $nombreDia = $date->format('l');
               echo "$nombreDia";
             }?></p>
-          <h3 class="subtitulo"><?php
+          <h3 class="subtitulo">
+            <?php
             if ($_GET['fecha']) {
               $dia = $date->format('d');
               echo "$dia";
-            }?></h3>
-          <p><?php
+            }?> 
+          </h3>
+          <p class="p"><?php
             if ($_GET['fecha']) {
               $nombreMes = $date->format('F');
               echo "$nombreMes";
             }?></p>
         </article>
         <article>
-          <p>Horario</p>
-          <h3 class="subtitulo"><?php
+          <p class="p">Horario</p>
+          <h3 class="subtitulo">
+            <?php
             if ($_GET['hora']) {
               $hora = $_GET['hora'];
               echo "$hora";
-            }?></h3>
-          <p>p.m</p>
+            }?> 
+          </h3>
+          <p class="p">p.m</p>
         </article>
         <article>
-          <p>Para</p>
-          <h3 class="subtitulo"><?php
+          <p class="p">Para</p>
+          <h3 class="subtitulo">
+            <?php
             if ($_GET['personas']) {
               $personas = $_GET['personas'];
               echo "$personas";
-            }?></h3>
-          <p>personas</p>
+            }?> 
+          </h3>
+          <p class="p">personas</p>
         </article>
       </div>
     </section>
@@ -170,16 +176,15 @@
     <div class="detalles">
       <article>
         <img src="img/icon/location.png" alt="Direccion: Thames 1810, Palermo">
-        <p class="textos">Thames 1810,<br> Palermo,<br> Ciudad Autónoma de Buenos Aires</p>
+        <h6 class="textos">Thames 1810,<br> Palermo,<br> Ciudad Autónoma de Buenos Aires</h6>
       </article>
       <article>
-
         <img src="img/icon/time.png" alt="Horarios">
-        <p class="textos">Martes a Viernes de 20 a 00hs.<br>Sábado y Domingo de 13 a 17hs y de 20 a 00hs. </p>
+        <h6 class="textos">Martes a Viernes de 20 a 00hs.<br>Sábado y Domingo de 13 a 17hs y de 20 a 00hs. </h6>
       </article>
       <article>
         <img src="img/icon/phonerojo.png" alt="Telefono: +54 11 4254-4834">
-        <p class="textos">Reserva tu mesa <br>+54 11 4254-4834</p>
+        <h6 class="textos">Reserva tu mesa <br>+54 11 4254-4834</h6>
       </article>
     </div>
     <ul class="redes">
