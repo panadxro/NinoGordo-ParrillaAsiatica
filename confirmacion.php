@@ -29,9 +29,7 @@
   <?php
       $personas;
       $fecha;
-      $date = new DateTime($fecha);
       $hora;
-      $time = new DateTime($hora);
       $servicio;
       $establecimiento;
       $nombre;
@@ -41,26 +39,32 @@
     <section class="seccion confirma">
       <h2 class="titulo">Reservación</h2>
       <p class="subtexto"><?php
-        if ($_GET['nombre']) {
-          $nombre = $_GET['nombre'];
+        if ($_POST['nombre']) {
+          $nombre = $_POST['nombre'];
           echo "$nombre";
         }?>,<br>Tu reservacion en Niño Gordo fue confirmada.</p>
       <div class="boxflex">
         <article>
           <p class="p"><?php
-            if ($_GET['fecha']) {
+            if ($_POST['fecha']) {
+              $fecha = $_POST['fecha'];
+              $date = new DateTime($fecha);
               $nombreDia = $date->format('l');
               echo "$nombreDia";
             }?></p>
           <h3 class="subtitulo">
             <?php
-            if ($_GET['fecha']) {
+            if ($_POST['fecha']) {
+              $fecha = $_POST['fecha'];
+              $date = new DateTime($fecha);
               $dia = $date->format('d');
               echo "$dia";
             }?> 
           </h3>
           <p class="p"><?php
-            if ($_GET['fecha']) {
+            if ($_POST['fecha']) {
+              $fecha = $_POST['fecha'];
+              $date = new DateTime($fecha);
               $nombreMes = $date->format('F');
               echo "$nombreMes";
             }?></p>
@@ -69,8 +73,10 @@
           <p class="p">Horario</p>
           <h3 class="subtitulo">
             <?php
-            if ($_GET['hora']) {
-              $hora = $_GET['hora'];
+            if ($_POST['hora']) {
+              $hora = $_POST['hora'];
+              $time = new DateTime($hora);
+              $hora = $_POST['hora'];
               echo "$hora";
             }?> 
           </h3>
@@ -80,8 +86,8 @@
           <p class="p">Para</p>
           <h3 class="subtitulo">
             <?php
-            if ($_GET['personas']) {
-              $personas = $_GET['personas'];
+            if ($_POST['personas']) {
+              $personas = $_POST['personas'];
               echo "$personas";
             }?> 
           </h3>
@@ -95,16 +101,17 @@
       <article class="boxdetalles">
         <h4>Reserva en Niño Gordo</h4>
         <p class="textodetalle"><?php
-            if ($_GET['fecha']) {
+            if ($_POST['fecha']) {
               $dia = $date->format('d');
               echo "$dia";
             }?> <?php
-            if ($_GET['fecha']) {
+            if ($_POST['fecha']) {
               $nombreMes = $date->format('F');
               echo "$nombreMes";
             }?>, <?php
-          if ($_GET['hora']) {
-            $hora = $_GET['hora'];
+          if ($_POST['hora']) {
+            $time = new DateTime($hora);
+            $hora = $_POST['hora'];
             echo "$hora";
           }?></p>
         <ul>
@@ -128,8 +135,8 @@
             </figure>
             <h5>Número de confirmación</h5>
             <p>ninogordo<?php
-              if ($_GET['telefono']) {
-                $telefono = $_GET['telefono'];
+              if ($_POST['telefono']) {
+                $telefono = $_POST['telefono'];
                 echo "$telefono";
               }?></p>
           </li>
@@ -139,8 +146,8 @@
             </figure>
             <h5>Número de personas</h5>
             <p><?php
-              if ($_GET['personas']) {
-                $personas = $_GET['personas'];
+              if ($_POST['personas']) {
+                $personas = $_POST['personas'];
                 echo "$personas";
               }?></p>
           </li>
@@ -150,8 +157,8 @@
             </figure>
             <h5>Establecimiento</h5>
             <p><?php
-              if ($_GET['establecimiento']) {
-                $establecimiento = $_GET['establecimiento'];
+              if ($_POST['establecimiento']) {
+                $establecimiento = $_POST['establecimiento'];
                 echo "$establecimiento";
               }?></p>
           </li>
@@ -161,8 +168,8 @@
             </figure>
             <h5>Servicio</h5>
             <p><?php
-              if ($_GET['servicio']) {
-                $servicio = $_GET['servicio'];
+              if ($_POST['servicio']) {
+                $servicio = $_POST['servicio'];
                 echo "$servicio";
               }?></p>
           </li>
