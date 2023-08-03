@@ -6,15 +6,28 @@
   align-items: center;
 }
 .header li a {
+  font-size: 1.2em;
   padding: .5rem 1rem;
   margin-inline: .5rem;
   border-radius: .5rem;
 }
 .header li a:hover {
   background-color: rgba(225, 255, 255, .1);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
 }
 .hamburguesa {
   display: none;
+}
+
+/* ----- Footer ----- */
+.detaller {
+  align-items: start;
+}
+/* ----- Footer ----- */
+video {
+  overflow: hidden;
+  height: 55vh;
+  border-radius: 2rem;
 }
 
 /* ----- Menu ----- */
@@ -23,7 +36,19 @@
   padding-block-start: 5rem;
 }
 .boxflex a:hover {
-  background-color: var(--color-btn);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.boxflex a img {
+  transition: scale 400ms;
+}
+.boxflex a:hover img {
+  scale:120%
+}
+.plato figure img {
+  transition: scale 400ms;
+}
+.plato:hover img {
+  scale: 120%;
 }
 /* ----- Reserva ----- */
 
