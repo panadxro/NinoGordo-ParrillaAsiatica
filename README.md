@@ -26,6 +26,11 @@ Haz tu reserva en línea completando el formulario en nuestra página web.
 ## Deja una Reseña
 Queremos conocer tu opinión. Deja una reseña sobre tu experiencia en nuestro restaurante.
 
+## Herramientas Utilizadas
+- HTML
+- CSS
+- PHP
+  
 ## Contacto
 Si tienes preguntas o sugerencias, no dudes en ponerte en contacto conmigo en lucas.panadero@gmail.com o a través de mis redes sociales.
 
